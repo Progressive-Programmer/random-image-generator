@@ -1,0 +1,43 @@
+h1 {
+    display: flex;
+    justify-content: center;
+}
+.bodyWrapper{
+    padding: 1rem;
+
+}
+.button {
+    margin:auto;
+    display: block;
+    border: none;
+    margin:  20px auto;
+    padding: 15px 30px;
+    border-radius: 4px;
+    color: white;
+    background-color: #4ba0f0;
+    size: 5rem;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: #0e90fb;
+}
+
+.form {
+    display: block;
+    margin: auto;
+    padding:4rem;
+    text-align: center;
+}
+.input {
+    display: block;
+    margin: 30px auto ;
+    min-height: 10px;
+    border: none;
+    font-size: 16px;
+    border-radius: 3px;
+    background-color: #e8e8e8aa;
+    padding: 7px 16px ;
+    width: 20em !important;
+    height: 2em !important;
+}

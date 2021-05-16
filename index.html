@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="bodyWrapper">
+        <h1>Add image and get random result </h1>
+        <input type="file" id="imageloader" name="imageloader" class="button" />
+        <div>
+            <canvas id="imageCanvas" width="200" height="250"></canvas>
+            <form class="form">
+                <input type='radio' name='color' id='original' checked >
+                <label for="original">Original</label>
+
+                <input type="radio" name="color" id='inverted' >
+                <label for='inverted'>Inverted</label>
+
+                <input type="radio" name="color" id='shift' >
+                <label for='shift'>Shift</label>
+            </form>
+            <br/>
+            <input type="number" placeholder="repeat... 1000x" id="inputRepeat" class="input" pattern="^(?!(?:^[-+]?[0.]+(?:[Ee]|$)))(?!(?:^-))(?:(?:[+-]?)(?=[0123456789.])(?:(?:(?:[0123456789]+)(?:(?:[.])(?:[0123456789]*))?|(?:(?:[.])(?:[0123456789]+))))(?:(?:[Ee])(?:(?:[+-]?)(?:[0123456789]+))|))$" />
+            <button id="button" name='random' class="button" >DO NOT CLICK!</button>
+            <button  id="save_button" name='save' class="button" >SAVE</button>
+        </div>
+    </div>
+</body>
+<script src="./script.js"></script>
+</html>
