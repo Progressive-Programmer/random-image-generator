@@ -8,7 +8,7 @@ const element = document.createElement('h2');
 //  create text node 
 const text = document.createTextNode('WHat the FUck!!!')
 
-console.log(window)
+
 // append text to element
 element.appendChild(text)
 
@@ -64,26 +64,28 @@ var randomNumber = function (min,max) {
     return Math.random()* (max-min) + min;
 }
 
+var repeat = 1000;
 
 var shift = function () {
+    console.log(repeat)
     // ctx.drawImage(img, 0,0);
-
-    const x = randomNumber(0,canvas.width);
-    const y = randomNumber(0,canvas.height);
-
-    const a = randomNumber(0,canvas.width);
-    const b = randomNumber(0,canvas.height);
-
-    const g = randomNumber(0,canvas.width);
-    const h = randomNumber(0,canvas.height);
-
-     const sectionData = ctx.getImageData(x,y, canvas.width/g , canvas.height/h );   
-     ctx.putImageData(sectionData, a,b)
-
+    for (i=0; i<repeat; i+=1) {
+        const x = randomNumber(0,canvas.width);
+        const y = randomNumber(0,canvas.height);
+    
+        const a = randomNumber(0,canvas.width);
+        const b = randomNumber(0,canvas.height);
+    
+        const g = randomNumber(0,canvas.width);
+        const h = randomNumber(0,canvas.height);
+    
+         const sectionData = ctx.getImageData(x,y, canvas.width/g , canvas.height/h );   
+         ctx.putImageData(sectionData, a,b)
+    }
 };
 
 const buttons = document.querySelectorAll('[name=color]')
-console.log(buttons)
+
 
 for (const input of buttons ) {
     input.addEventListener("change", function(evt) {
@@ -103,9 +105,8 @@ for (const input of buttons ) {
 const clickButton = document.querySelector('[name=random');
 
 clickButton.addEventListener("click",function(e){
-   for (i=0; i<10000; i+=1) {shift()}
-   //chnage the number i<10000 to n to repeat the process for n number of times.
-   console.log(canvas.width)
+    shift()
+         //chnage the number i<10000 to n to repeat the process for n number of times.
 })
 
 //  download image
@@ -142,10 +143,17 @@ var handleImage = function (e) {
 
         img.src = e.target.result;
     }
-   console.log(e)
+
     reader.readAsDataURL(e.target.files[0]); 
 }
 
+
+var input = document.getElementById('inputRepeat');
+input.addEventListener('input', function(e){
+    var value = e.target.value
+    repeat = value
+ 
+})
 
 
 
